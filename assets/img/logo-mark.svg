@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="モリシタハウス">
+  <!--
+    モリシタハウスのロゴマーク。
+    m-house.co.jp の logo.png（900×47）内のマーク部分（約40×40px）から
+    形状を採寸してベクター化したもの。色は元画像の実測値 #16a67e。
+    ※ 公式のベクターデータ（AI/SVG）を入手したら差し替えること。
+  -->
+  <circle cx="50" cy="50" r="50" fill="#16a67e"/>
+  <g fill="#fff">
+    <!-- 左右の柱 -->
+    <rect x="25.5" y="27" width="7.5" height="50.5"/>
+    <rect x="67" y="27" width="7.5" height="50.5"/>
+    <!-- 上部のV（Mの中央ストローク） -->
+    <path d="M25.5 27 L50 45.5 L74.5 27 L74.5 35.5 L50 54 L25.5 35.5 Z"/>
+    <!-- 中央の横棒 -->
+    <rect x="25.5" y="51" width="49" height="11.5"/>
+  </g>
+  <!-- 上部の小さな四角（中抜き） -->
+  <rect x="45.5" y="16" width="9" height="9" fill="none" stroke="#fff" stroke-width="3"/>
+</svg>

@@ -1,0 +1,875 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 制作中のデザイン案のため検索エンジンに載せない -->
+<meta name="robots" content="noindex, nofollow">
+<title>姫路の中古住宅専門サイト｜見つからないときは、探しに行きます。モリシタハウス</title>
+<meta name="description" content="姫路市の中古住宅を掲載しています。ご希望に合うものが出てこなければ、ご要望とご予算をお聞きして私たちが探します。リフォーム費用と諸費用を含めた総額でお出しします。一級建築士が建物を見る、社員3人の会社です。">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ========== ダミーデータ注記バー（公開前に削除する） ========== -->
+<p class="notice-bar">
+  ※ このサイトは制作中のデザイン案です。掲載している物件情報・件数・費用の内訳は<strong>すべてダミーデータ</strong>です。
+</p>
+
+<!-- ========== S1 ヘッダー ========== -->
+<header class="site-header">
+  <div class="site-header__inner">
+    <div class="logo">
+      <img class="logo__mark" src="assets/img/logo-mark.svg" alt="" width="40" height="40">
+      <span class="logo__name">モリシタハウス</span>
+      <span class="logo__tag">姫路の中古住宅専門サイト</span>
+    </div>
+    <div class="header__actions">
+      <p class="header__tel mb0">
+        <b><a href="tel:0792608878">079-260-8878</a></b>
+        平日 9:00〜18:00／水曜定休
+      </p>
+      <nav class="header__nav" aria-label="主要な操作">
+        <a class="btn btn--outline btn--sm" href="#member">会員ログイン</a>
+        <a class="btn btn--primary btn--sm" href="#reserve">相談を予約する</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ========== S2 ファーストビュー ========== -->
+<section class="hero" aria-labelledby="hero-h">
+  <div class="hero__inner">
+    <div class="hero__text">
+      <h1 class="hero__catch" id="hero-h">見つからないときは、<br>探しに行きます。</h1>
+      <p class="hero__sub">
+        姫路の中古住宅を掲載しています。ご希望に合うものが出てこなければ、
+        ご要望とご予算をお聞きして、私たちが探します。
+      </p>
+      <dl class="hero__scope">
+        <dt>対応エリア</dt>
+        <dd>姫路市全域／たつの市／太子町／福崎町 <span class="tbc">要確認：対応範囲</span></dd>
+        <dt>ご予算の目安</dt>
+        <dd>物件とリフォームを合わせて 1,500万〜3,100万円<span class="dummy">ダミー</span></dd>
+      </dl>
+    </div>
+
+    <div class="hero__media">
+      <figure class="hero__figure">
+        <img src="assets/img/staff-morishita.jpg" width="760" height="570"
+             alt="モリシタハウス代表取締役の森下誉樹">
+        <figcaption class="hero__caption">
+          <b>代表取締役 森下 誉樹</b>
+          一級建築士。姫路で新築住宅を設計・施工してきました。<br>
+          お探しになる中古住宅の建物は、私が見ます。
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="hero__forms">
+      <!-- 物件を探す（ポータル導線） -->
+      <div class="card">
+        <p class="card__title">物件をお探しの方</p>
+        <!-- 検索先未定。実装時に /search/ へ接続する -->
+        <form action="" method="get">
+          <div class="field">
+            <label for="s-area">エリア</label>
+            <select id="s-area" name="area">
+              <option>姫路市全域</option>
+              <option>飾磨</option><option>広畑</option><option>網干</option>
+              <option>書写</option><option>花田</option><option>別所</option>
+              <option>香呂</option><option>林田</option>
+              <option>たつの市・太子町・福崎町</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="s-price">ご予算（リフォーム前の物件価格）</label>
+            <select id="s-price" name="price">
+              <option>指定なし</option>
+              <option>1,000万円以下</option>
+              <option>1,000万〜1,500万円</option>
+              <option>1,500万〜2,000万円</option>
+              <option>2,000万〜2,500万円</option>
+              <option>2,500万円以上</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="s-type">種別</label>
+            <select id="s-type" name="type">
+              <option>中古一戸建て</option>
+              <option>中古マンション</option>
+              <option>土地</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn--outline btn--block">この条件の物件を見る</button>
+          <p class="hint">会員登録なしでご覧いただけます。</p>
+        </form>
+      </div>
+
+      <!-- 要望から探す（主訴求①への導線） -->
+      <div class="card card--accent">
+        <p class="card__title">ご要望からお探しの方</p>
+        <p class="hint" style="margin-top:0">
+          条件が固まっていなくても構いません。エリアもご予算も、
+          お話しながら決めていけます。
+        </p>
+        <a class="btn btn--primary btn--block" href="#reserve">要望を伝えて相談する（90分・無料）</a>
+        <p class="hint">ご要望が固まっていない段階の方が、ほとんどです。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== S3 探す担当（FV直下の帯） ========== -->
+<section class="staffbar" aria-labelledby="staffbar-h">
+  <div class="wrap">
+    <h2 id="staffbar-h">探すのは、この3人です</h2>
+    <p class="staffbar__note">担当は代わりません。姫路市山吹の、社員3人の会社です。</p>
+    <ul class="staffbar__list">
+      <li class="staffbar__item">
+        <span class="staffbar__ph">
+          <img src="assets/img/staff-morishita.jpg" width="56" height="56"
+               alt="森下誉樹" style="object-position: 47% 22%">
+        </span>
+        <span class="staffbar__name">森下 誉樹
+          <span class="staffbar__role">代表取締役</span>
+          <span class="staffbar__lic">一級建築士</span>
+        </span>
+      </li>
+      <li class="staffbar__item">
+        <span class="staffbar__ph">
+          <img src="assets/img/staff-yamasaki.jpg" width="56" height="56"
+               alt="山﨑敏宏" style="object-position: 43% 20%">
+        </span>
+        <span class="staffbar__name">山﨑 敏宏
+          <span class="staffbar__role">サービススタッフ</span>
+          <span class="staffbar__lic">住宅メンテナンス診断士</span>
+        </span>
+      </li>
+      <li class="staffbar__item">
+        <span class="staffbar__ph">
+          <img src="assets/img/staff-matsushita.jpg" width="56" height="56"
+               alt="松下登志美" style="object-position: 50% 22%">
+        </span>
+        <span class="staffbar__name">松下 登志美
+          <span class="staffbar__role">不動産手続対応</span>
+          <span class="staffbar__lic">宅地建物取引士</span>
+        </span>
+      </li>
+    </ul>
+    <p class="mb0"><a class="tap" href="#staff">3人の話し方を、来る前に見ておく →</a></p>
+  </div>
+</section>
+
+<!-- ========== S4 掲載中の物件 ========== -->
+<section class="sec sec--alt" aria-labelledby="props-h">
+  <div class="wrap">
+    <h2 id="props-h">いま姫路で752件を扱っています<span class="dummy">ダミー</span></h2>
+
+    <ul class="counter">
+      <li><dl><dt>一般公開</dt><dd>84<span>件</span></dd></dl></li>
+      <li><dl><dt>会員限定</dt><dd>156<span>件</span></dd></dl></li>
+      <li><dl><dt>店舗でのみご案内</dt><dd>512<span>件</span></dd></dl></li>
+    </ul>
+    <p class="small">2026年7月30日現在。上記の件数はすべてダミーの数字です。</p>
+
+    <p class="measure">
+      一般公開は、売主さまが広く公開してよいと決めた物件です。
+      会員限定・店舗でのみご案内する物件は、所在地や写真を広く出せない事情があるものです。
+    </p>
+
+    <h3>新着物件<span class="dummy">すべてダミー</span></h3>
+    <ul class="props">
+      <!-- 物件カード1 -->
+      <li class="prop">
+        <figure class="ph mb0" style="--ratio: 4 / 3">
+          <svg viewBox="0 0 400 300" role="img" aria-label="物件写真（未提供）">
+            <rect width="400" height="300" fill="#e8e4dc"/>
+            <text x="200" y="150" text-anchor="middle" font-size="17" fill="#8a857c">物件写真（横4:3）</text>
+          </svg>
+        </figure>
+        <div class="prop__body">
+          <p class="prop__area mb0">姫路市飾磨区</p>
+          <p class="prop__price mb0">1,480<small>万円</small></p>
+          <p class="prop__monthly mb0">月々のお支払い <strong>40,102円</strong></p>
+          <p class="prop__spec">築32年／4LDK／土地168㎡・建物98㎡</p>
+          <a class="btn btn--outline btn--sm btn--block" href="#">詳しく見る</a>
+        </div>
+      </li>
+      <!-- 物件カード2 -->
+      <li class="prop">
+        <figure class="ph mb0" style="--ratio: 4 / 3">
+          <svg viewBox="0 0 400 300" role="img" aria-label="物件写真（未提供）">
+            <rect width="400" height="300" fill="#e8e4dc"/>
+            <text x="200" y="150" text-anchor="middle" font-size="17" fill="#8a857c">物件写真（横4:3）</text>
+          </svg>
+        </figure>
+        <div class="prop__body">
+          <p class="prop__area mb0">姫路市広畑区</p>
+          <p class="prop__price mb0">980<small>万円</small></p>
+          <p class="prop__monthly mb0">月々のお支払い <strong>26,551円</strong></p>
+          <p class="prop__spec">築38年／4DK／土地142㎡・建物86㎡</p>
+          <a class="btn btn--outline btn--sm btn--block" href="#">詳しく見る</a>
+        </div>
+      </li>
+      <!-- 物件カード3 -->
+      <li class="prop">
+        <figure class="ph mb0" style="--ratio: 4 / 3">
+          <svg viewBox="0 0 400 300" role="img" aria-label="物件写真（未提供）">
+            <rect width="400" height="300" fill="#e8e4dc"/>
+            <text x="200" y="150" text-anchor="middle" font-size="17" fill="#8a857c">物件写真（横4:3）</text>
+          </svg>
+        </figure>
+        <div class="prop__body">
+          <p class="prop__area mb0">姫路市書写</p>
+          <p class="prop__price mb0">1,980<small>万円</small></p>
+          <p class="prop__monthly mb0">月々のお支払い <strong>53,647円</strong></p>
+          <p class="prop__spec">築24年／4LDK／土地198㎡・建物112㎡</p>
+          <a class="btn btn--outline btn--sm btn--block" href="#">詳しく見る</a>
+        </div>
+      </li>
+      <!-- 物件カード4 -->
+      <li class="prop">
+        <figure class="ph mb0" style="--ratio: 4 / 3">
+          <svg viewBox="0 0 400 300" role="img" aria-label="物件写真（未提供）">
+            <rect width="400" height="300" fill="#e8e4dc"/>
+            <text x="200" y="150" text-anchor="middle" font-size="17" fill="#8a857c">物件写真（横4:3）</text>
+          </svg>
+        </figure>
+        <div class="prop__body">
+          <p class="prop__area mb0">姫路市花田町</p>
+          <p class="prop__price mb0">1,280<small>万円</small></p>
+          <p class="prop__monthly mb0">月々のお支払い <strong>34,684円</strong></p>
+          <p class="prop__spec">築29年／3LDK／土地155㎡・建物92㎡</p>
+          <a class="btn btn--outline btn--sm btn--block" href="#">詳しく見る</a>
+        </div>
+      </li>
+      <!-- 物件カード5 -->
+      <li class="prop">
+        <figure class="ph mb0" style="--ratio: 4 / 3">
+          <svg viewBox="0 0 400 300" role="img" aria-label="物件写真（未提供）">
+            <rect width="400" height="300" fill="#e8e4dc"/>
+            <text x="200" y="150" text-anchor="middle" font-size="17" fill="#8a857c">物件写真（横4:3）</text>
+          </svg>
+        </figure>
+        <div class="prop__body">
+          <p class="prop__area mb0">姫路市網干区</p>
+          <p class="prop__price mb0">850<small>万円</small></p>
+          <p class="prop__monthly mb0">月々のお支払い <strong>23,029円</strong></p>
+          <p class="prop__spec">築41年／5DK／土地176㎡・建物104㎡</p>
+          <a class="btn btn--outline btn--sm btn--block" href="#">詳しく見る</a>
+        </div>
+      </li>
+      <!-- 物件カード6 -->
+      <li class="prop">
+        <figure class="ph mb0" style="--ratio: 4 / 3">
+          <svg viewBox="0 0 400 300" role="img" aria-label="物件写真（未提供）">
+            <rect width="400" height="300" fill="#e8e4dc"/>
+            <text x="200" y="150" text-anchor="middle" font-size="17" fill="#8a857c">物件写真（横4:3）</text>
+          </svg>
+        </figure>
+        <div class="prop__body">
+          <p class="prop__area mb0">たつの市龍野町</p>
+          <p class="prop__price mb0">1,150<small>万円</small></p>
+          <p class="prop__monthly mb0">月々のお支払い <strong>31,162円</strong></p>
+          <p class="prop__spec">築27年／4LDK／土地182㎡・建物96㎡</p>
+          <a class="btn btn--outline btn--sm btn--block" href="#">詳しく見る</a>
+        </div>
+      </li>
+    </ul>
+    <p class="small">
+      月々のお支払いは、金利0.75%・35年・頭金0円・元利均等で試算した概算です（2026年7月時点）。
+      リフォーム費用は含みません。
+    </p>
+
+    <h3>ご予算から探す</h3>
+    <ul class="chips">
+      <li><a href="#">1,000万円以下</a></li>
+      <li><a href="#">1,000万〜1,500万円</a></li>
+      <li><a href="#">1,500万〜2,000万円</a></li>
+      <li><a href="#">2,000万〜2,500万円</a></li>
+      <li><a href="#">2,500万円以上</a></li>
+    </ul>
+
+    <h3>小学校の学区から探す <span class="tbc">要確認：姫路市立小学校名のリスト</span></h3>
+    <ul class="chips">
+      <li><a href="#">◯◯小学校</a></li><li><a href="#">◯◯小学校</a></li>
+      <li><a href="#">◯◯小学校</a></li><li><a href="#">◯◯小学校</a></li>
+    </ul>
+
+    <h3>エリアから探す <span class="tbc">要確認：実際の対応エリア</span></h3>
+    <ul class="chips">
+      <li><a href="#">飾磨</a></li><li><a href="#">広畑</a></li><li><a href="#">網干</a></li>
+      <li><a href="#">書写</a></li><li><a href="#">花田</a></li><li><a href="#">別所</a></li>
+      <li><a href="#">香呂</a></li><li><a href="#">林田</a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ========== S5 探し方の違い（主訴求①） ========== -->
+<section class="sec" aria-labelledby="how-h">
+  <div class="wrap">
+    <h2 id="how-h">ホームページに出ている物件は、姫路の中古住宅の全部ではありません</h2>
+    <div class="measure">
+      <p>
+        不動産サイトに載るのは、売主が「広く公開してよい」と決めた物件です。
+        売り出す前の相談段階のもの、事情があって広く出せないものは、載りません。
+      </p>
+      <p class="strong-line">
+        だから、毎晩不動産サイトを開いて「先約が入りました」を繰り返すことになります。
+        探し方の問題です。物件がないわけではありません。
+      </p>
+    </div>
+
+    <div class="compare">
+      <div class="compare__col compare__col--now">
+        <span class="compare__label">これまでの探し方</span>
+        <ul class="flow">
+          <li>あなたが探す</li>
+          <li>見つける</li>
+          <li>業者に問い合わせる</li>
+          <li>「先約が入りました」</li>
+        </ul>
+        <p class="small mb0">
+          物件が主語です。手元にある物件に、あなたの条件を当てはめていく順番になります。
+        </p>
+      </div>
+      <div class="compare__col compare__col--ours">
+        <span class="compare__label">モリシタハウスの探し方</span>
+        <ul class="flow">
+          <li>ご要望をお聞きする</li>
+          <li>資金計画を立てる</li>
+          <li>リフォーム費用も入れて総額を決める</li>
+          <li>2つの経路から探す</li>
+          <li>ご案内する</li>
+        </ul>
+        <p class="small mb0">
+          <strong>あなたが主語です。</strong>条件を決めてから、探しに行きます。
+        </p>
+      </div>
+    </div>
+
+    <h3>物件を探す2つの経路</h3>
+    <div class="routes">
+      <div class="route">
+        <h3 class="mt0">① 売主さまから直接お預かりする物件</h3>
+        <p class="mb0">
+          私たちは実家・空き家の売却相談を受けています（住まいの終活相談カウンター兵庫）。
+          「売ろうか迷っている」段階のご相談が、先に私たちに届きます。
+        </p>
+      </div>
+      <div class="route">
+        <h3 class="mt0">② 業者間データベース（レインズ・ATBB）</h3>
+        <p class="mb0">
+          不動産会社だけが見られるデータベースです。
+          ポータルに掲載される前の物件、掲載していない物件が含まれます。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== S6 総額 ========== -->
+<section class="sec sec--alt" aria-labelledby="total-h">
+  <div class="wrap">
+    <h2 id="total-h">物件価格ではなく、リフォームと諸費用を含めた総額でお出しします</h2>
+    <div class="measure">
+      <p>
+        中古住宅で予算が崩れるのは、物件を決めてからリフォームの見積を取るからです。
+        1,480万円の家が、工事と諸費用で2,400万円を超えることがあります。
+      </p>
+      <p>
+        <strong>地元で23年以上、新築・リフォームを行なってきた相談員が相談にのります。</strong>
+        物件を探し始める前に、総額の上限を決めてしまいます。
+      </p>
+    </div>
+
+    <h3>ご予算別・総額の内訳<span class="dummy">すべてダミー</span></h3>
+    <div class="scroll-x">
+      <table>
+        <caption>金利0.75%・35年・頭金0円・元利均等で試算（2026年7月時点）</caption>
+        <thead>
+          <tr><th scope="col">　</th><th scope="col">ケースA</th><th scope="col">ケースB</th><th scope="col">ケースC</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">物件価格</th><td class="t-num">980万円</td><td class="t-num">1,480万円</td><td class="t-num">1,980万円</td></tr>
+          <tr><th scope="row">リフォーム費用</th><td class="t-num">520万円</td><td class="t-num">780万円</td><td class="t-num">880万円</td></tr>
+          <tr><th scope="row">諸費用</th><td class="t-num">150万円</td><td class="t-num">190万円</td><td class="t-num">240万円</td></tr>
+          <tr class="t-total"><th scope="row">総額</th><td class="t-num">1,650万円</td><td class="t-num">2,450万円</td><td class="t-num">3,100万円</td></tr>
+          <tr class="t-total"><th scope="row">月々のお支払い</th><td class="t-num">44,673円</td><td class="t-num">66,345円</td><td class="t-num">83,946円</td></tr>
+          <tr><th scope="row">物件の条件</th><td>築38年・4DK<br>広畑区</td><td>築32年・4LDK<br>飾磨区</td><td>築24年・4LDK<br>書写</td></tr>
+          <tr><th scope="row">こんな方に</th><td>予算を抑えて<br>立地を優先</td><td>学区を優先して<br>広さも確保</td><td>工事を最小限に<br>してすぐ入居</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>諸費用の中身</h3>
+    <p class="measure">
+      <strong>含まれるもの：</strong>仲介手数料／登記費用／火災保険／既存住宅売買かし保険／住宅ローン事務手数料<br>
+      <strong>含まれないもの：</strong>家具・家電／引越し費用／外構工事
+    </p>
+    <p class="small">
+      上記はすべてダミーの数字です。金利・工事内容により変わります。あくまで概算としてご覧ください。
+    </p>
+  </div>
+</section>
+
+<!-- ========== CTA① 総額を見せた直後 ========== -->
+<section class="cta" aria-labelledby="cta1-h">
+  <div class="cta__inner">
+    <h2 id="cta1-h">総額の上限を、先に出しませんか</h2>
+    <p class="cta__above">
+      ご要望が固まっていない段階の方が、ほとんどです。<br>
+      この日、物件のご紹介はいたしません。
+    </p>
+    <a class="btn btn--primary btn--lg" href="#reserve">総額の上限を出してもらう（90分・無料）</a>
+    <p class="cta__below">送信後、担当の松下より1営業日以内にご連絡します。</p>
+  </div>
+</section>
+
+<!-- ========== S7 建物の不安 ========== -->
+<section class="sec" aria-labelledby="bldg-h">
+  <div class="wrap">
+    <h2 id="bldg-h">建物の状態は、一級建築士が見ます</h2>
+    <div class="measure">
+      <p>
+        築30年の家を買うとき、気になるのは価格ではなく建物です。
+        耐震、シロアリ、雨漏り、基礎のひび。図面だけでは分かりません。
+      </p>
+      <p>
+        代表の森下は<strong>一級建築士</strong>で、姫路で新築を設計・施工してきました。
+        売る側の目ではなく、<strong>建てる側の目で</strong>建物を見ます。
+      </p>
+    </div>
+
+    <h3>ご希望に応じて手配します</h3>
+    <ul class="measure">
+      <li><strong>建物状況調査（インスペクション）</strong> — 建築士が構造・雨漏りの状況を調べ、報告書にします</li>
+      <li><strong>既存住宅売買かし保険</strong> — 引渡し後に見つかった不具合に、保険で備えます</li>
+    </ul>
+
+    <h3>調査してだめなら、買わない選択もお勧めします</h3>
+    <div class="measure">
+      <p>
+        調査の結果、費用をかけて直すべきでないと判断したら、そう申し上げます。
+        その物件を売ることより、その家に何年住めるかを先に考えます。
+      </p>
+      <p class="mb0">ご家族に説明が必要なときは、報告書をそのままお持ちいただけます。</p>
+    </div>
+
+    <figure class="ph" style="--ratio: 16 / 9; margin-top: 1.5rem; max-width: 34rem">
+      <svg viewBox="0 0 800 450" role="img" aria-label="建物状況調査の様子（未提供）">
+        <rect width="800" height="450" fill="#e8e4dc"/>
+        <text x="400" y="212" text-anchor="middle" font-size="22" fill="#8a857c">代表が現場で建物を見ている写真</text>
+        <text x="400" y="248" text-anchor="middle" font-size="16" fill="#a8a29a">横16:9／1点（＋調査報告書の見本 1点）</text>
+      </svg>
+    </figure>
+    <p class="ph-caption">要提供：2点／床下・小屋裏を覗いている姿など「見ている」動作が写っているもの</p>
+  </div>
+</section>
+
+<!-- ========== S8 誰が探すのか（主訴求②） ========== -->
+<section class="sec sec--alt" id="staff" aria-labelledby="who-h">
+  <div class="wrap">
+    <h2 id="who-h">姫路で家を建ててきた会社が、中古住宅を探します</h2>
+    <div class="measure">
+      <p>
+        中古住宅を扱う会社の多くは、買い取ってリフォームした家を売る会社か、
+        全国チェーンの仲介店です。<strong>私たちは、家を建ててきた側の会社です。</strong>
+      </p>
+    </div>
+
+    <ul class="credentials measure">
+      <li>一級建築士事務所（登録 第01A00961号）</li>
+      <li>建設業許可（兵庫県知事 特-2 第450225号）</li>
+      <li>宅地建物取引業免許（兵庫県知事(13) 第450028号）</li>
+      <li>グループ：株式会社モリシタ・アット・ホーム（工務店）／株式会社モリシタ・アット・リフォーム</li>
+    </ul>
+    <p class="measure">
+      だから、リフォーム費用を含めた総額が出せます。だから、建物の状態が分かります。
+    </p>
+
+    <h3>3人だけの会社です</h3>
+    <div class="measure">
+      <p>
+        大きな会社ではありません。<strong>だから担当が代わりません。</strong>
+        ご予算のことを一度お話しいただければ、二度お聞きすることはありません。
+      </p>
+    </div>
+
+    <div class="staff">
+      <div class="staff__card">
+        <figure class="staff__figure mb0">
+          <img src="assets/img/staff-morishita.jpg" width="760" height="570" alt="森下誉樹">
+        </figure>
+        <div class="staff__body">
+          <p class="staff__name mb0">森下 誉樹</p>
+          <p class="staff__role mb0">代表取締役</p>
+          <p class="staff__lic">一級建築士／一級建築施工管理技士／省エネ建築診断士</p>
+          <p class="staff__msg">
+            私はもともと、姫路で新築住宅を設計し、施工してきました。
+            中古住宅を扱うようになったのは、実家や空き家のご相談を受けるうちに、
+            「この家をほしい人がいるのに、出会えていない」と気づいたからです。
+            建物は、直せるものと直すべきでないものがあります。そこは私が見ます。
+          </p>
+          <p class="hint"><span class="tbc">要確認：本人の言葉として使用してよいか</span></p>
+        </div>
+      </div>
+
+      <div class="staff__card">
+        <figure class="staff__figure mb0">
+          <img src="assets/img/staff-yamasaki.jpg" width="760" height="570" alt="山﨑敏宏">
+        </figure>
+        <div class="staff__body">
+          <p class="staff__name mb0">山﨑 敏宏</p>
+          <p class="staff__role mb0">サービススタッフ</p>
+          <p class="staff__lic">住宅メンテナンス診断士／住宅外壁診断士／庭園管理士</p>
+          <p class="staff__msg">
+            中古住宅は、買ってからのほうが長いお付き合いになります。
+            外壁も庭も、どこまで手を入れるべきか、どこは待ってよいかをお伝えします。
+            どんな小さなことでもご相談ください。
+          </p>
+          <p class="hint"><span class="tbc">要確認：本人確認</span></p>
+        </div>
+      </div>
+
+      <div class="staff__card">
+        <figure class="staff__figure mb0">
+          <img src="assets/img/staff-matsushita.jpg" width="760" height="570" alt="松下登志美">
+        </figure>
+        <div class="staff__body">
+          <p class="staff__name mb0">松下 登志美</p>
+          <p class="staff__role mb0">不動産手続対応</p>
+          <p class="staff__lic">宅地建物取引士／損害保険募集人</p>
+          <p class="staff__msg">
+            契約や住宅ローン、登記の手続きは、はじめての方には分かりにくいものです。
+            ひとつずつ、分かるようにご説明しながら進めます。
+            ご相談のご連絡は、私がお受けしています。
+          </p>
+          <p class="hint"><span class="tbc">要確認：本人確認</span></p>
+        </div>
+      </div>
+    </div>
+
+    <h3>話し方は、来る前に見ておいてください</h3>
+    <div class="measure">
+      <p>
+        グループのYouTubeで、代表が家づくりの話をしています。
+        どんな人間が出てくるかは、お越しになる前にご確認いただけます。
+      </p>
+      <p>
+        <a class="btn btn--outline" href="https://www.youtube.com/@morishitaathome"
+           target="_blank" rel="noopener">YouTubeを見る</a>
+      </p>
+      <p class="hint">別タブで開きます。</p>
+    </div>
+
+    <h3>所在地</h3>
+    <p class="measure">
+      〒670-0085 兵庫県姫路市山吹2丁目12番30号<br>
+      <span class="tbc">要確認：店舗外観写真・駐車場の有無・最寄り駅からのアクセス</span>
+    </p>
+  </div>
+</section>
+
+<!-- ========== CTA② 人を見せた直後 ========== -->
+<section class="cta" aria-labelledby="cta2-h">
+  <div class="cta__inner">
+    <h2 id="cta2-h">この3人に、話してみませんか</h2>
+    <a class="btn btn--primary btn--lg" href="#reserve">この3人に相談する（90分・無料）</a>
+    <p class="cta__below">
+      平日 9:00〜18:00（水曜定休）。オンラインでも同じ内容です。<br>
+      <span class="tbc">要確認：土日のご希望に対応できるか</span>
+    </p>
+  </div>
+</section>
+
+<!-- ========== S9 期間（弱点の開示） ========== -->
+<section class="sec" aria-labelledby="term-h">
+  <div class="wrap">
+    <h2 id="term-h">正直に申し上げます。おおよそ半年を目安にお考えください</h2>
+    <div class="measure">
+      <p>
+        ご要望をお聞きしてから探すので、在庫からお選びいただくより時間がかかります。
+        <strong>目安は半年です。</strong>ご条件が絞られている場合は、それ以上かかります。
+      </p>
+      <p>「今週中に決めたい」という方には、私たちは向いていません。</p>
+    </div>
+
+    <h3>だから、早めにお声がけください</h3>
+    <p>お子さまの入学に合わせる場合、逆算するとこうなります。</p>
+    <ul class="timeline">
+      <li class="timeline__now"><b>いま</b><span>はじめの相談（90分）</span></li>
+      <li><b>約6ヶ月</b><span>物件を探す・内見する</span></li>
+      <li><b>約1ヶ月</b><span>契約・住宅ローン本審査・引渡し</span></li>
+      <li><b>1〜2ヶ月</b><span>リフォーム工事</span></li>
+      <li><b>4月</b><span>ご入居・ご入学</span></li>
+    </ul>
+    <p class="measure">
+      <strong>4月のご入居をお考えなら、前年の春にはご相談ください。</strong>
+    </p>
+    <p class="small">物件との出会いによって前後します。期間を確約するものではありません。</p>
+
+    <h3>お断りしていること</h3>
+    <p class="measure mb0">
+      投資目的の方、現金一括での買取をお考えの方はお引き受けしていません。
+      <strong>住むための1軒だけを扱っています。</strong>
+    </p>
+  </div>
+</section>
+
+<!-- ========== S10 相談の中身 ========== -->
+<section class="sec sec--alt" aria-labelledby="agenda-h">
+  <div class="wrap">
+    <h2 id="agenda-h">はじめの相談90分で、物件のご紹介はいたしません</h2>
+    <div class="measure">
+      <p>
+        90分でするのは、ご要望の整理と、総額の上限を決めることです。
+        物件をお見せするのは、その次からです。<strong>手ぶらでお越しください。</strong>
+      </p>
+    </div>
+
+    <h3>90分の中身</h3>
+    <ul class="agenda">
+      <li><b>0〜20分</b><span>ご希望のエリア・学区・広さ・入居時期・譲れない条件をお聞きします</span></li>
+      <li><b>20〜40分</b><span>ご年収とご希望の月々返済額から、借入の上限を出します</span></li>
+      <li><b>40〜60分</b><span>リフォーム費用と諸費用を入れて、総額の上限を確定します</span></li>
+      <li><b>60〜80分</b><span>その総額で、どこをどう探すかの計画を一緒に作ります</span></li>
+      <li><b>80〜90分</b><span>ご入居までの段取りをお渡しします</span></li>
+      <li class="agenda__end">この日、物件のご紹介はいたしません</li>
+    </ul>
+
+    <h3>お持ち帰りいただくもの</h3>
+    <ol class="measure">
+      <li><strong>総額シート</strong>（A4・1枚）— ご希望条件での「物件＋リフォーム＋諸費用」の上限額</li>
+      <li><strong>探し方の設計図</strong> — どの経路で、どんな条件で、どれくらいの期間で探すかの計画</li>
+      <li><strong>段取り表</strong> — ご入居までにいつ何をするか</li>
+    </ol>
+    <p class="measure">ご夫婦でお持ち帰りいただき、その場では決めなくて構いません。</p>
+
+    <h3>お約束します</h3>
+    <ul class="promise measure">
+      <li><strong>この日、物件のご紹介はいたしません</strong></li>
+      <li>当日のお申し込み・ご契約はお願いしません</li>
+      <li>ご予算に合わない場合は、合わないと申し上げます</li>
+      <li>営業のご連絡は1回のみです。不要とお伝えいただければ、以降いたしません</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ========== CTA③ メイン・予約フォーム ========== -->
+<section class="sec" id="reserve" aria-labelledby="reserve-h">
+  <div class="wrap">
+    <h2 id="reserve-h">はじめの相談を予約する</h2>
+    <p class="measure">所要90分・無料。オンラインでも同じ内容です。</p>
+
+    <div class="card" style="max-width: 34rem">
+      <!-- 送信先未定。公開前に action / method とフォーム処理を設定する -->
+      <form action="" method="post" novalidate>
+        <div class="field">
+          <label for="f-name">お名前 <span class="req">必須</span></label>
+          <input id="f-name" name="name" type="text" required autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="f-tel">電話番号 <span class="req">必須</span></label>
+          <input id="f-tel" name="tel" type="tel" required autocomplete="tel"
+                 inputmode="numeric" placeholder="0792608878">
+          <p class="hint">ハイフンなしでも大丈夫です。</p>
+        </div>
+        <div class="field">
+          <label for="f-area">ご希望のエリア <span class="req">必須</span></label>
+          <select id="f-area" name="area" required>
+            <option value="">選んでください</option>
+            <option>姫路市全域</option>
+            <option>姫路市内の特定エリア</option>
+            <option>たつの市・太子町・福崎町</option>
+            <option>まだ決めていない</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-when">ご希望の入居時期 <span class="req">必須</span></label>
+          <select id="f-when" name="when" required>
+            <option value="">選んでください</option>
+            <option>まだ決めていない</option>
+            <option>1年以内</option>
+            <option>2年以内</option>
+            <option>3年以上先</option>
+            <option>子どもの入学に合わせたい</option>
+          </select>
+          <p class="hint">「まだ決めていない」で構いません。</p>
+        </div>
+        <button type="submit" class="btn btn--primary btn--block btn--lg">
+          この内容で相談を予約する
+        </button>
+        <p class="hint">
+          ご入力いただいた内容を、営業目的で第三者にお渡しすることはありません。<br>
+          送信後、担当の松下より1営業日以内にご連絡します。日程はそのときに決めましょう。
+        </p>
+      </form>
+    </div>
+
+    <p style="margin-top:1.5rem">
+      <strong>お電話でも承ります</strong><br>
+      <a href="tel:0792608878" style="font-size:1.5rem;font-weight:700">079-260-8878</a><br>
+      <span class="small">平日 9:00〜18:00／水曜定休　<span class="tbc">要確認：土日をご希望の方への案内</span></span>
+    </p>
+  </div>
+</section>
+
+<!-- ========== S11 会員登録 ========== -->
+<section class="sec sec--deep" id="member" aria-labelledby="member-h">
+  <div class="wrap">
+    <h2 id="member-h">会員登録で、ネットに出していない物件が見られます</h2>
+    <div class="measure">
+      <p>
+        扱っている752件のうち、所在地や写真を広く公開できない物件があります。
+        売主さまのご事情によるものです。
+      </p>
+    </div>
+
+    <div class="member__nums">
+      <div class="member__num">
+        <b>156件</b>
+        会員のみにご案内<span class="dummy">ダミー</span>
+      </div>
+      <div class="member__num">
+        <b>512件</b>
+        店舗でのみご案内<span class="dummy">ダミー</span>
+      </div>
+    </div>
+
+    <h3>登録は、メールアドレスとパスワードだけです</h3>
+    <div class="measure">
+      <p>
+        ご希望条件（エリア・学区・ご予算・広さ）をご登録いただくと、
+        条件に合う物件が出た日に、メールでお知らせします。
+      </p>
+      <p>
+        <a class="btn btn--primary" href="#">無料で会員登録する（入力30秒）</a>
+      </p>
+      <p class="small">登録料・年会費はかかりません。退会はマイページからいつでもできます。</p>
+    </div>
+
+    <h3>まずは新着だけ受け取る方へ</h3>
+    <p class="mb0">
+      <a class="btn btn--ghost" href="#">LINEで新着物件を受け取る</a>
+      <span class="tbc">要確認：LINE公式アカウントの有無・URL</span>
+    </p>
+  </div>
+</section>
+
+<!-- ========== S12 お客様の声（レイアウトのみ） ========== -->
+<section class="sec" aria-labelledby="voice-h">
+  <div class="wrap">
+    <h2 id="voice-h">お客様の声</h2>
+    <div class="voices">
+      <div class="voice">
+        <p class="mb0">
+          <strong>【要確認】</strong><br>
+          実在のお客様の声<br>
+          属性（年代・家族構成・エリア・購入した家の築年数）＋決め手＋不安だった点とその解消
+        </p>
+      </div>
+      <div class="voice">
+        <p class="mb0"><strong>【要確認】</strong><br>掲載許諾の取得が必要</p>
+      </div>
+      <div class="voice">
+        <p class="mb0"><strong>【要確認】</strong><br>手書きアンケートのスキャン画像があれば併載</p>
+      </div>
+    </div>
+    <p class="small">
+      声が揃うまでレイアウトのみを実装しています。創作した声は掲載しません。
+    </p>
+  </div>
+</section>
+
+<!-- ========== S13 よくあるご質問 ========== -->
+<section class="sec sec--alt" aria-labelledby="faq-h">
+  <div class="wrap">
+    <h2 id="faq-h">よくあるご質問</h2>
+    <div class="faq">
+      <details>
+        <summary>相談は無料ですか。</summary>
+        <p>無料です。はじめの相談で費用をいただくことはありません。</p>
+      </details>
+      <details>
+        <summary>何を持って行けばいいですか。</summary>
+        <p>手ぶらで構いません。源泉徴収票かお給料の明細があると、借入の上限をより正確に出せます。</p>
+      </details>
+      <details>
+        <summary>営業時間を教えてください。</summary>
+        <p>平日9:00〜18:00です。水曜が定休日です。</p>
+      </details>
+      <details>
+        <summary>平日は仕事で行けません。</summary>
+        <p><span class="tbc">要確認：土日・夜間・オンラインでの対応可否。ここは主要ターゲットの離脱点なので要検討</span></p>
+      </details>
+      <details>
+        <summary>オンラインでもできますか。</summary>
+        <p>できます。内容は来店と同じで、総額シートは後日郵送またはPDFでお送りします。</p>
+      </details>
+      <details>
+        <summary>駐車場はありますか。</summary>
+        <p><span class="tbc">要確認</span></p>
+      </details>
+      <details>
+        <summary>仲介手数料はいくらですか。</summary>
+        <p><span class="tbc">要確認：手数料の定め</span></p>
+      </details>
+      <details>
+        <summary>姫路市以外でも相談できますか。</summary>
+        <p><span class="tbc">要確認：対応範囲</span></p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ========== S14 最後のCTA ========== -->
+<section class="cta" aria-labelledby="cta3-h">
+  <div class="cta__inner">
+    <h2 id="cta3-h">姫路の中古住宅さがし、はじめの一歩</h2>
+    <p class="cta__above">
+      物件が決まっていなくても、ご予算が決まっていなくても構いません。<br>
+      まず、ご要望をお聞かせください。
+    </p>
+    <a class="btn btn--primary btn--lg" href="#reserve">はじめの相談を予約する（90分・無料）</a>
+    <p class="cta__tel">
+      お電話は <a href="tel:0792608878">079-260-8878</a><br>
+      <span class="cta__below">平日 9:00〜18:00／水曜定休</span>
+    </p>
+  </div>
+</section>
+
+</main>
+
+<!-- ========== S15 フッター ========== -->
+<footer class="site-footer">
+  <div class="wrap">
+    <h2>株式会社モリシタハウス</h2>
+    <dl>
+      <dt>所在地</dt><dd>〒670-0085 兵庫県姫路市山吹2丁目12番30号</dd>
+      <dt>電話</dt><dd><a href="tel:0792608878">079-260-8878</a>（平日 9:00〜18:00／水曜定休）</dd>
+      <dt>宅地建物取引業免許</dt><dd>兵庫県知事(13)第450028号</dd>
+      <dt>建設業許可</dt><dd>兵庫県知事(特-2)第450225号</dd>
+      <dt>一級建築士事務所</dt><dd>第01A00961号</dd>
+      <dt>グループ会社</dt><dd>株式会社モリシタ・アット・ホーム／株式会社モリシタ・アット・リフォーム</dd>
+    </dl>
+    <ul class="footer__links">
+      <li><a href="https://www.m-house.co.jp/" target="_blank" rel="noopener">住まいの終活相談カウンター兵庫（実家・空き家のご相談）</a></li>
+      <li><a href="#">プライバシーポリシー</a></li>
+      <li><a href="#">サイトマップ</a></li>
+    </ul>
+    <p class="copyright">© 2026 モリシタハウス</p>
+  </div>
+</footer>
+
+<!-- ========== SP固定フッターCTA ========== -->
+<div class="sticky-cta">
+  <a class="btn btn--outline" href="tel:0792608878">電話で聞く</a>
+  <a class="btn btn--primary" href="#reserve">相談を予約する</a>
+</div>
+
+</body>
+</html>
