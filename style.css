@@ -493,3 +493,171 @@ a[href^="tel:"] {
 .mt0 { margin-top: 0; }
 .mb0 { margin-bottom: 0; }
 .center { text-align: center; }
+
+/* ==========================================================================
+   姫路市エリア地図（物件数をひと目で）
+   参考: himeji.cocoie.co.jp と同じ情報構造・操作。作画・配色・CSSは自作。
+   件数は data-count 属性で識別し、物件管理システム接続後に差し替える。
+   モーダルは :target で開くため JavaScript を必要としない。
+   ========================================================================== */
+
+.areamap { margin: 2rem 0 1rem; }
+.areamap__title { margin-top: 0; }
+.areamap__lead { font-size: .9375rem; }
+.areamap__note { margin-top: 1rem; }
+.areamap__note code {
+  font-size: .9em; background: #eee9e1; padding: .05em .35em; border-radius: 3px;
+}
+
+/* 件数アイコン（共通） */
+.cnt__ico { width: 1em; height: 1em; fill: currentColor; flex: 0 0 auto; }
+
+/* 凡例 */
+.legend {
+  display: flex; flex-wrap: wrap; gap: .4rem .9rem;
+  list-style: none; margin: 1rem 0; padding: 0;
+  font-size: var(--fs-small); color: var(--color-text-sub);
+}
+.legend__item { display: flex; align-items: center; gap: .3em; margin: 0; }
+
+/* 地図の舞台。SVGの比率に合わせてバルーンを％配置する */
+.areamap__stage {
+  position: relative;
+  aspect-ratio: 1000 / 760;
+  margin: 0 auto;
+  max-width: 720px;
+}
+.areamap__svg { width: 100%; height: 100%; overflow: visible; }
+.areamap__region path { transition: filter .15s, opacity .15s; }
+.areamap__region:hover path,
+.areamap__region:focus-visible path { filter: brightness(.94); }
+.areamap__region:focus-visible { outline: none; }
+.areamap__region:focus-visible path { stroke-width: 12; }
+
+/* バルーン */
+.balloon {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex; flex-direction: column; align-items: center; gap: .1rem;
+  padding: .3rem .45rem;
+  background: var(--c); color: #fff; text-decoration: none;
+  border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,.25);
+  font-size: .625rem; line-height: 1.35; white-space: nowrap;
+}
+.balloon::after {              /* 吹き出しの足 */
+  content: ""; position: absolute; bottom: -5px; left: 50%;
+  transform: translateX(-50%);
+  border-left: 5px solid transparent; border-right: 5px solid transparent;
+  border-top: 5px solid var(--c);
+}
+.balloon:hover, .balloon:focus-visible { filter: brightness(1.12); }
+.balloon__name { font-weight: 700; }
+.balloon__name small { font-weight: 400; opacity: .85; font-size: .85em; }
+.balloon__cnt { display: flex; gap: .3rem; }
+.balloon__cnt__item { display: flex; align-items: center; gap: .1em; }
+.balloon__cnt__item b { font-variant-numeric: tabular-nums; }
+
+@media (min-width: 640px) {
+  .balloon { font-size: .75rem; padding: .4rem .6rem; gap: .15rem; }
+  .balloon__cnt { gap: .45rem; }
+}
+@media (min-width: 900px) {
+  .balloon { font-size: .8125rem; }
+}
+
+/* エリア一覧（地図と同じ内容。スマホと支援技術のための経路） */
+.areacards {
+  display: grid; gap: .6rem; list-style: none; margin: 1.5rem 0 0; padding: 0;
+}
+@media (min-width: 560px) { .areacards { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 900px) { .areacards { grid-template-columns: repeat(3, 1fr); } }
+.areacard { margin: 0; }
+.areacard__link {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: .15rem .6rem;
+  padding: .8rem .9rem;
+  background: #fff; text-decoration: none; color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-left: 5px solid var(--c);
+  border-radius: var(--radius);
+  min-height: 48px;
+}
+.areacard__link:hover { border-color: var(--c); }
+.areacard__name { font-weight: 700; color: var(--c); }
+.areacard__name small { font-weight: 400; color: var(--color-text-sub); font-size: .8em; }
+.areacard__total {
+  grid-row: 1 / 3; grid-column: 2;
+  font-size: 1.5rem; font-weight: 700; color: var(--c);
+  font-variant-numeric: tabular-nums; line-height: 1.2;
+}
+.areacard__total small { font-size: .55em; font-weight: 400; }
+.areacard__cnt { display: flex; gap: .7rem; font-size: var(--fs-small); color: var(--color-text-sub); }
+.areacard__cnt__item { display: flex; align-items: center; gap: .15em; }
+.areacard__more {
+  grid-column: 1 / -1; font-size: var(--fs-small); color: var(--color-primary);
+  text-decoration: underline; text-underline-offset: 2px; margin-top: .3rem;
+}
+
+/* モーダル（:target で開閉。JavaScript不要） */
+.modal {
+  position: fixed; inset: 0; z-index: 100;
+  display: none;
+  align-items: center; justify-content: center;
+  padding: 1rem;
+}
+.modal:target { display: flex; }
+.modal__bg { position: absolute; inset: 0; background: rgba(18, 40, 67, .6); }
+.modal__panel {
+  position: relative; z-index: 1;
+  width: 100%; max-width: 30rem; max-height: 86vh; overflow-y: auto;
+  background: #fff; border-radius: var(--radius);
+  padding: 1.5rem 1.15rem 1.15rem;
+  box-shadow: 0 12px 40px rgba(0,0,0,.3);
+}
+.modal__close {
+  position: absolute; top: .35rem; right: .5rem;
+  width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; line-height: 1; color: var(--color-text-sub);
+  text-decoration: none; border-radius: 6px;
+}
+.modal__close:hover { background: var(--color-bg-alt); }
+.modal__h {
+  font-size: 1.25rem; font-weight: 700; color: var(--c);
+  margin: 0 2.5rem .6rem 0;
+}
+.modal__cnt {
+  display: flex; flex-wrap: wrap; gap: .9rem;
+  font-size: var(--fs-small); color: var(--color-text-sub);
+  padding-bottom: .8rem; border-bottom: 1px solid var(--color-border);
+}
+.modal__cnt__item { display: flex; align-items: center; gap: .2em; }
+.modal__cnt__item b { color: var(--color-text); font-variant-numeric: tabular-nums; }
+.modal__list { list-style: none; margin: .8rem 0 1.2rem; padding: 0; }
+.modal__list li { margin: 0; border-bottom: 1px solid var(--color-border); }
+.modal__list a {
+  display: flex; align-items: center; justify-content: space-between;
+  min-height: 48px; padding: .5rem .2rem;
+  text-decoration: none; color: var(--color-text); font-size: .9375rem;
+}
+.modal__list a:hover { background: var(--color-bg-alt); }
+.modal__list b { color: var(--color-accent-dk); font-variant-numeric: tabular-nums; }
+
+/* スマホでは地図上のバルーンをエリア名だけにする。
+   6つのバルーンに件数まで載せると 338px 幅では必ず重なるため、
+   件数は地図の下のエリア一覧（.areacards）で見せる。 */
+@media (max-width: 639px) {
+  .balloon { font-size: .625rem; padding: .35rem .45rem; min-height: 28px; }
+  .balloon__cnt { display: none; }
+  .balloon__name small { display: none; }
+}
+/* 地図上のバルーンは小さいので、同じリンクを 48px 以上で押せる
+   .areacards（地図の下のエリア一覧）を同等の操作経路として必ず併置する。 */
+
+/* 海（南側の向き合わせ。地図として読めるようにするための補助） */
+.areamap__sea { fill: #dbe9f2; }
+.areamap__sealabel {
+  fill: #6b8ba3; font-size: 26px; letter-spacing: .3em; font-weight: 700;
+}

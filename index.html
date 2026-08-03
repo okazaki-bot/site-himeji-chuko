@@ -166,19 +166,229 @@
 <!-- ========== S4 掲載中の物件 ========== -->
 <section class="sec sec--alt" aria-labelledby="props-h">
   <div class="wrap">
-    <h2 id="props-h">いま姫路で752件を扱っています<span class="dummy">ダミー</span></h2>
+    <h2 id="props-h">いま姫路で1,817件を扱っています<span class="dummy">ダミー</span></h2>
 
     <ul class="counter">
-      <li><dl><dt>一般公開</dt><dd>84<span>件</span></dd></dl></li>
-      <li><dl><dt>会員限定</dt><dd>156<span>件</span></dd></dl></li>
-      <li><dl><dt>店舗でのみご案内</dt><dd>512<span>件</span></dd></dl></li>
+      <li><dl><dt>一般公開</dt><dd>561<span>件</span></dd></dl></li>
+      <li><dl><dt>会員限定</dt><dd>938<span>件</span></dd></dl></li>
+      <li><dl><dt>店頭のみでご案内</dt><dd>318<span>件</span></dd></dl></li>
     </ul>
     <p class="small">2026年7月30日現在。上記の件数はすべてダミーの数字です。</p>
 
     <p class="measure">
       一般公開は、売主さまが広く公開してよいと決めた物件です。
-      会員限定・店舗でのみご案内する物件は、所在地や写真を広く出せない事情があるものです。
+      会員限定・店頭のみでご案内する物件は、所在地や写真を広く出せない事情があるものです。
     </p>
+
+    <!-- ========== S4-B 姫路市エリア地図（物件数をひと目で） ========== -->
+    <div class="areamap" id="areamap">
+      <h3 class="areamap__title">姫路市のどこに、何件あるか</h3>
+      <p class="areamap__lead measure">エリアをえらぶと、学区ごとの件数が出ます。会員限定・店頭のみの物件も、件数だけは先にお出しします。</p>
+      <ul class="legend">
+        <li class="legend__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7v9a1 1 0 0 1-1 1h-5v-6H10v6H4a1 1 0 0 1-1-1z"/></svg>一般公開物件</li>
+        <li class="legend__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10V8a5 5 0 0 1 10 0v2h1a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1zm2 0h6V8a3 3 0 0 0-6 0z"/></svg>会員限定物件</li>
+        <li class="legend__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16l1 5a3 3 0 0 1-3 3 3 3 0 0 1-3-2 3 3 0 0 1-3 2 3 3 0 0 1-3-2 3 3 0 0 1-3 2 3 3 0 0 1-3-3zm1 10h14v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z"/></svg>店頭のみ物件</li>
+      </ul>
+      <div class="areamap__stage">
+        <svg class="areamap__svg" viewBox="0 0 1000 760" role="img" aria-label="姫路市南部を6つのエリアに分けた模式図。エリアごとの件数は、この下のエリア一覧でも同じ内容を確認できます。">
+          <title>姫路市エリア地図（模式図）</title>
+          <path class="areamap__sea" d="M 60,600 L 200,672 L 340,655 L 440,684 L 570,678 L 680,656 L 780,628 L 880,612 L 985,570 L 1000,760 L 60,760 Z"/>
+          <text class="areamap__sealabel" x="500" y="726" text-anchor="middle">播磨灘</text>
+          <a href="#modal-himejinishi" class="areamap__region" aria-label="姫路西エリアの学区別件数をひらく">
+            <path d="M 95,330 L 150,190 L 300,145 L 390,128 L 400,265 L 392,385 L 378,470 L 356,560 L 330,628 L 215,645 L 110,520 Z" fill="#dde6ee" stroke="#123a5c" stroke-width="5" stroke-linejoin="round"/>
+          </a>
+          <a href="#modal-takaoka" class="areamap__region" aria-label="高岡・安室・青山エリアの学区別件数をひらく">
+            <path d="M 390,128 L 500,104 L 640,100 L 650,250 L 645,345 L 642,392 L 560,388 L 470,392 L 392,385 L 400,265 Z" fill="#f5ecd6" stroke="#96690f" stroke-width="5" stroke-linejoin="round"/>
+          </a>
+          <a href="#modal-ekikita" class="areamap__region" aria-label="駅北エリアの学区別件数をひらく">
+            <path d="M 640,100 L 780,118 L 900,165 L 955,320 L 958,338 L 850,345 L 740,352 L 645,345 L 650,250 Z" fill="#e0efe5" stroke="#2f7d4f" stroke-width="5" stroke-linejoin="round"/>
+          </a>
+          <a href="#modal-ekiminami" class="areamap__region" aria-label="駅南エリアの学区別件数をひらく">
+            <path d="M 645,345 L 740,352 L 850,345 L 856,430 L 850,510 L 855,585 L 760,600 L 665,628 L 632,545 L 636,470 L 642,392 Z" fill="#f7e6dc" stroke="#b8562a" stroke-width="5" stroke-linejoin="round"/>
+          </a>
+          <a href="#modal-shikama" class="areamap__region" aria-label="飾磨エリアの学区別件数をひらく">
+            <path d="M 392,385 L 470,392 L 560,388 L 642,392 L 636,470 L 632,545 L 665,628 L 560,650 L 430,656 L 330,628 L 356,560 L 378,470 Z" fill="#ebe4f3" stroke="#6b4f8f" stroke-width="5" stroke-linejoin="round"/>
+          </a>
+          <a href="#modal-shirahama" class="areamap__region" aria-label="白浜エリアの学区別件数をひらく">
+            <path d="M 850,345 L 958,338 L 972,430 L 975,470 L 940,545 L 855,585 L 850,510 L 856,430 Z" fill="#dfedf7" stroke="#1f7fb5" stroke-width="5" stroke-linejoin="round"/>
+          </a>
+        </svg>
+        <a class="balloon" href="#modal-himejinishi" style="--c: #123a5c; left: 25.4%; top: 50.2%;">
+          <span class="balloon__name">姫路西<small>エリア</small></span>
+          <span class="balloon__cnt"><span class="balloon__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7v9a1 1 0 0 1-1 1h-5v-6H10v6H4a1 1 0 0 1-1-1z"/></svg><b data-count="himejinishi:public">263</b><span class="visually-hidden">一般公開物件</span></span><span class="balloon__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10V8a5 5 0 0 1 10 0v2h1a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1zm2 0h6V8a3 3 0 0 0-6 0z"/></svg><b data-count="himejinishi:member">340</b><span class="visually-hidden">会員限定物件</span></span><span class="balloon__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16l1 5a3 3 0 0 1-3 3 3 3 0 0 1-3-2 3 3 0 0 1-3 2 3 3 0 0 1-3-2 3 3 0 0 1-3 2 3 3 0 0 1-3-3zm1 10h14v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z"/></svg><b data-count="himejinishi:shop">107</b><span class="visually-hidden">店頭のみ物件</span></span></span>
+        </a>
+        <a class="balloon" href="#modal-takaoka" style="--c: #96690f; left: 52.3%; top: 29.7%;">
+          <span class="balloon__name">高岡・安室・青山<small>エリア</small></span>
+          <span class="balloon__cnt"><span class="balloon__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7v9a1 1 0 0 1-1 1h-5v-6H10v6H4a1 1 0 0 1-1-1z"/></svg><b data-count="takaoka:public">105</b><span class="visually-hidden">一般公開物件</span></span><span class="balloon__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10V8a5 5 0 0 1 10 0v2h1a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1zm2 0h6V8a3 3 0 0 0-6 0z"/></svg><b data-count="takaoka:member">170</b><span class="visually-hidden">会員限定物件</span></span><span class="balloon__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16l1 5a3 3 0 0 1-3 3 3 3 0 0 1-3-2 3 3 0 0 1-3 2 3 3 0 0 1-3-2 3 3 0 0 1-3 2 3 3 0 0 1-3-3zm1 10h14v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z"/></svg><b data-count="takaoka:shop">64</b><span class="visually-hidden">店頭のみ物件</span></span></span>
+        </a>
+        <a class="balloon" href="#modal-ekikita" style="--c: #2f7d4f; left: 80.0%; top: 29.4%;">
+          <span class="balloon__name">駅北<small>エリア</small></span>
+          <span class="balloon__cnt"><span class="balloon__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7v9a1 1 0 0 1-1 1h-5v-6H10v6H4a1 1 0 0 1-1-1z"/></svg><b data-count="ekikita:public">61</b><span class="visually-hidden">一般公開物件</span></span><span class="balloon__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10V8a5 5 0 0 1 10 0v2h1a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1zm2 0h6V8a3 3 0 0 0-6 0z"/></svg><b data-count="ekikita:member">159</b><span class="visually-hidden">会員限定物件</span></span><span class="balloon__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16l1 5a3 3 0 0 1-3 3 3 3 0 0 1-3-2 3 3 0 0 1-3 2 3 3 0 0 1-3-2 3 3 0 0 1-3 2 3 3 0 0 1-3-3zm1 10h14v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z"/></svg><b data-count="ekikita:shop">50</b><span class="visually-hidden">店頭のみ物件</span></span></span>
+        </a>
+        <a class="balloon" href="#modal-ekiminami" style="--c: #b8562a; left: 70.4%; top: 65.7%;">
+          <span class="balloon__name">駅南<small>エリア</small></span>
+          <span class="balloon__cnt"><span class="balloon__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7v9a1 1 0 0 1-1 1h-5v-6H10v6H4a1 1 0 0 1-1-1z"/></svg><b data-count="ekiminami:public">50</b><span class="visually-hidden">一般公開物件</span></span><span class="balloon__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10V8a5 5 0 0 1 10 0v2h1a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1zm2 0h6V8a3 3 0 0 0-6 0z"/></svg><b data-count="ekiminami:member">93</b><span class="visually-hidden">会員限定物件</span></span><span class="balloon__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16l1 5a3 3 0 0 1-3 3 3 3 0 0 1-3-2 3 3 0 0 1-3 2 3 3 0 0 1-3-2 3 3 0 0 1-3 2 3 3 0 0 1-3-3zm1 10h14v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z"/></svg><b data-count="ekiminami:shop">32</b><span class="visually-hidden">店頭のみ物件</span></span></span>
+        </a>
+        <a class="balloon" href="#modal-shikama" style="--c: #6b4f8f; left: 50.2%; top: 71.0%;">
+          <span class="balloon__name">飾磨<small>エリア</small></span>
+          <span class="balloon__cnt"><span class="balloon__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7v9a1 1 0 0 1-1 1h-5v-6H10v6H4a1 1 0 0 1-1-1z"/></svg><b data-count="shikama:public">53</b><span class="visually-hidden">一般公開物件</span></span><span class="balloon__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10V8a5 5 0 0 1 10 0v2h1a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1zm2 0h6V8a3 3 0 0 0-6 0z"/></svg><b data-count="shikama:member">98</b><span class="visually-hidden">会員限定物件</span></span><span class="balloon__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16l1 5a3 3 0 0 1-3 3 3 3 0 0 1-3-2 3 3 0 0 1-3 2 3 3 0 0 1-3-2 3 3 0 0 1-3 2 3 3 0 0 1-3-3zm1 10h14v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z"/></svg><b data-count="shikama:shop">36</b><span class="visually-hidden">店頭のみ物件</span></span></span>
+        </a>
+        <a class="balloon" href="#modal-shirahama" style="--c: #1f7fb5; left: 89.7%; top: 57.2%;">
+          <span class="balloon__name">白浜<small>エリア</small></span>
+          <span class="balloon__cnt"><span class="balloon__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7v9a1 1 0 0 1-1 1h-5v-6H10v6H4a1 1 0 0 1-1-1z"/></svg><b data-count="shirahama:public">29</b><span class="visually-hidden">一般公開物件</span></span><span class="balloon__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10V8a5 5 0 0 1 10 0v2h1a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1zm2 0h6V8a3 3 0 0 0-6 0z"/></svg><b data-count="shirahama:member">78</b><span class="visually-hidden">会員限定物件</span></span><span class="balloon__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16l1 5a3 3 0 0 1-3 3 3 3 0 0 1-3-2 3 3 0 0 1-3 2 3 3 0 0 1-3-2 3 3 0 0 1-3 2 3 3 0 0 1-3-3zm1 10h14v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z"/></svg><b data-count="shirahama:shop">29</b><span class="visually-hidden">店頭のみ物件</span></span></span>
+        </a>
+      </div>
+      <ul class="areacards">
+        <li class="areacard" style="--c: #123a5c">
+          <a class="areacard__link" href="#modal-himejinishi">
+            <span class="areacard__name">姫路西<small>エリア</small></span>
+            <span class="areacard__total">710<small>件</small></span>
+            <span class="areacard__cnt"><span class="areacard__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7v9a1 1 0 0 1-1 1h-5v-6H10v6H4a1 1 0 0 1-1-1z"/></svg><b data-count="himejinishi:public">263</b><span class="visually-hidden">一般公開物件</span></span><span class="areacard__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10V8a5 5 0 0 1 10 0v2h1a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1zm2 0h6V8a3 3 0 0 0-6 0z"/></svg><b data-count="himejinishi:member">340</b><span class="visually-hidden">会員限定物件</span></span><span class="areacard__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16l1 5a3 3 0 0 1-3 3 3 3 0 0 1-3-2 3 3 0 0 1-3 2 3 3 0 0 1-3-2 3 3 0 0 1-3 2 3 3 0 0 1-3-3zm1 10h14v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z"/></svg><b data-count="himejinishi:shop">107</b><span class="visually-hidden">店頭のみ物件</span></span></span>
+            <span class="areacard__more">11校の学区別に見る</span>
+          </a>
+        </li>
+        <li class="areacard" style="--c: #96690f">
+          <a class="areacard__link" href="#modal-takaoka">
+            <span class="areacard__name">高岡・安室・青山<small>エリア</small></span>
+            <span class="areacard__total">339<small>件</small></span>
+            <span class="areacard__cnt"><span class="areacard__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7v9a1 1 0 0 1-1 1h-5v-6H10v6H4a1 1 0 0 1-1-1z"/></svg><b data-count="takaoka:public">105</b><span class="visually-hidden">一般公開物件</span></span><span class="areacard__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10V8a5 5 0 0 1 10 0v2h1a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1zm2 0h6V8a3 3 0 0 0-6 0z"/></svg><b data-count="takaoka:member">170</b><span class="visually-hidden">会員限定物件</span></span><span class="areacard__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16l1 5a3 3 0 0 1-3 3 3 3 0 0 1-3-2 3 3 0 0 1-3 2 3 3 0 0 1-3-2 3 3 0 0 1-3 2 3 3 0 0 1-3-3zm1 10h14v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z"/></svg><b data-count="takaoka:shop">64</b><span class="visually-hidden">店頭のみ物件</span></span></span>
+            <span class="areacard__more">5校の学区別に見る</span>
+          </a>
+        </li>
+        <li class="areacard" style="--c: #2f7d4f">
+          <a class="areacard__link" href="#modal-ekikita">
+            <span class="areacard__name">駅北<small>エリア</small></span>
+            <span class="areacard__total">270<small>件</small></span>
+            <span class="areacard__cnt"><span class="areacard__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7v9a1 1 0 0 1-1 1h-5v-6H10v6H4a1 1 0 0 1-1-1z"/></svg><b data-count="ekikita:public">61</b><span class="visually-hidden">一般公開物件</span></span><span class="areacard__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10V8a5 5 0 0 1 10 0v2h1a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1zm2 0h6V8a3 3 0 0 0-6 0z"/></svg><b data-count="ekikita:member">159</b><span class="visually-hidden">会員限定物件</span></span><span class="areacard__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16l1 5a3 3 0 0 1-3 3 3 3 0 0 1-3-2 3 3 0 0 1-3 2 3 3 0 0 1-3-2 3 3 0 0 1-3 2 3 3 0 0 1-3-3zm1 10h14v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z"/></svg><b data-count="ekikita:shop">50</b><span class="visually-hidden">店頭のみ物件</span></span></span>
+            <span class="areacard__more">7校の学区別に見る</span>
+          </a>
+        </li>
+        <li class="areacard" style="--c: #b8562a">
+          <a class="areacard__link" href="#modal-ekiminami">
+            <span class="areacard__name">駅南<small>エリア</small></span>
+            <span class="areacard__total">175<small>件</small></span>
+            <span class="areacard__cnt"><span class="areacard__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7v9a1 1 0 0 1-1 1h-5v-6H10v6H4a1 1 0 0 1-1-1z"/></svg><b data-count="ekiminami:public">50</b><span class="visually-hidden">一般公開物件</span></span><span class="areacard__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10V8a5 5 0 0 1 10 0v2h1a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1zm2 0h6V8a3 3 0 0 0-6 0z"/></svg><b data-count="ekiminami:member">93</b><span class="visually-hidden">会員限定物件</span></span><span class="areacard__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16l1 5a3 3 0 0 1-3 3 3 3 0 0 1-3-2 3 3 0 0 1-3 2 3 3 0 0 1-3-2 3 3 0 0 1-3 2 3 3 0 0 1-3-3zm1 10h14v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z"/></svg><b data-count="ekiminami:shop">32</b><span class="visually-hidden">店頭のみ物件</span></span></span>
+            <span class="areacard__more">3校の学区別に見る</span>
+          </a>
+        </li>
+        <li class="areacard" style="--c: #6b4f8f">
+          <a class="areacard__link" href="#modal-shikama">
+            <span class="areacard__name">飾磨<small>エリア</small></span>
+            <span class="areacard__total">187<small>件</small></span>
+            <span class="areacard__cnt"><span class="areacard__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7v9a1 1 0 0 1-1 1h-5v-6H10v6H4a1 1 0 0 1-1-1z"/></svg><b data-count="shikama:public">53</b><span class="visually-hidden">一般公開物件</span></span><span class="areacard__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10V8a5 5 0 0 1 10 0v2h1a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1zm2 0h6V8a3 3 0 0 0-6 0z"/></svg><b data-count="shikama:member">98</b><span class="visually-hidden">会員限定物件</span></span><span class="areacard__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16l1 5a3 3 0 0 1-3 3 3 3 0 0 1-3-2 3 3 0 0 1-3 2 3 3 0 0 1-3-2 3 3 0 0 1-3 2 3 3 0 0 1-3-3zm1 10h14v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z"/></svg><b data-count="shikama:shop">36</b><span class="visually-hidden">店頭のみ物件</span></span></span>
+            <span class="areacard__more">4校の学区別に見る</span>
+          </a>
+        </li>
+        <li class="areacard" style="--c: #1f7fb5">
+          <a class="areacard__link" href="#modal-shirahama">
+            <span class="areacard__name">白浜<small>エリア</small></span>
+            <span class="areacard__total">136<small>件</small></span>
+            <span class="areacard__cnt"><span class="areacard__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7v9a1 1 0 0 1-1 1h-5v-6H10v6H4a1 1 0 0 1-1-1z"/></svg><b data-count="shirahama:public">29</b><span class="visually-hidden">一般公開物件</span></span><span class="areacard__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10V8a5 5 0 0 1 10 0v2h1a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1zm2 0h6V8a3 3 0 0 0-6 0z"/></svg><b data-count="shirahama:member">78</b><span class="visually-hidden">会員限定物件</span></span><span class="areacard__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16l1 5a3 3 0 0 1-3 3 3 3 0 0 1-3-2 3 3 0 0 1-3 2 3 3 0 0 1-3-2 3 3 0 0 1-3 2 3 3 0 0 1-3-3zm1 10h14v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z"/></svg><b data-count="shirahama:shop">29</b><span class="visually-hidden">店頭のみ物件</span></span></span>
+            <span class="areacard__more">3校の学区別に見る</span>
+          </a>
+        </li>
+      </ul>
+      <p class="small areamap__note">件数はダミーです。物件管理システムと接続後、各数字（<code>data-count="エリア:区分"</code>）を差し替えます。地図はエリア区分を示す模式図で、実際の行政区画とは一致しません。対象は姫路市南部です（北部の夢前・香寺・安富は含みません）。</p>
+    </div>
+    <div class="modal" id="modal-himejinishi" role="dialog" aria-modal="true" aria-labelledby="modal-himejinishi-h">
+      <a class="modal__bg" href="#areamap" aria-label="閉じる"></a>
+      <div class="modal__panel">
+        <a class="modal__close" href="#areamap" aria-label="閉じる">×</a>
+        <p class="modal__h" id="modal-himejinishi-h" style="--c: #123a5c">姫路西エリア</p>
+        <p class="modal__cnt"><span class="modal__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7v9a1 1 0 0 1-1 1h-5v-6H10v6H4a1 1 0 0 1-1-1z"/></svg><b data-count="himejinishi:public">263</b><span class="visually-hidden">一般公開物件</span></span><span class="modal__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10V8a5 5 0 0 1 10 0v2h1a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1zm2 0h6V8a3 3 0 0 0-6 0z"/></svg><b data-count="himejinishi:member">340</b><span class="visually-hidden">会員限定物件</span></span><span class="modal__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16l1 5a3 3 0 0 1-3 3 3 3 0 0 1-3-2 3 3 0 0 1-3 2 3 3 0 0 1-3-2 3 3 0 0 1-3 2 3 3 0 0 1-3-3zm1 10h14v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z"/></svg><b data-count="himejinishi:shop">107</b><span class="visually-hidden">店頭のみ物件</span></span></p>
+        <ul class="modal__list">
+          <li><a href="#">八幡小学校<b>(118)</b></a></li>
+          <li><a href="#">広畑小学校<b>(38)</b></a></li>
+          <li><a href="#">広畑第二小学校<b>(68)</b></a></li>
+          <li><a href="#">大津小学校<b>(81)</b></a></li>
+          <li><a href="#">南大津小学校<b>(16)</b></a></li>
+          <li><a href="#">大津茂小学校<b>(35)</b></a></li>
+          <li><a href="#">網干小学校<b>(86)</b></a></li>
+          <li><a href="#">網干西小学校<b>(61)</b></a></li>
+          <li><a href="#">勝原小学校<b>(105)</b></a></li>
+          <li><a href="#">旭陽小学校<b>(68)</b></a></li>
+          <li><a href="#">余部小学校<b>(34)</b></a></li>
+        </ul>
+        <a class="btn btn--primary btn--block" href="#">姫路西エリアのすべての物件を見る</a>
+      </div>
+    </div>
+    <div class="modal" id="modal-takaoka" role="dialog" aria-modal="true" aria-labelledby="modal-takaoka-h">
+      <a class="modal__bg" href="#areamap" aria-label="閉じる"></a>
+      <div class="modal__panel">
+        <a class="modal__close" href="#areamap" aria-label="閉じる">×</a>
+        <p class="modal__h" id="modal-takaoka-h" style="--c: #96690f">高岡・安室・青山エリア</p>
+        <p class="modal__cnt"><span class="modal__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7v9a1 1 0 0 1-1 1h-5v-6H10v6H4a1 1 0 0 1-1-1z"/></svg><b data-count="takaoka:public">105</b><span class="visually-hidden">一般公開物件</span></span><span class="modal__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10V8a5 5 0 0 1 10 0v2h1a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1zm2 0h6V8a3 3 0 0 0-6 0z"/></svg><b data-count="takaoka:member">170</b><span class="visually-hidden">会員限定物件</span></span><span class="modal__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16l1 5a3 3 0 0 1-3 3 3 3 0 0 1-3-2 3 3 0 0 1-3 2 3 3 0 0 1-3-2 3 3 0 0 1-3 2 3 3 0 0 1-3-3zm1 10h14v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z"/></svg><b data-count="takaoka:shop">64</b><span class="visually-hidden">店頭のみ物件</span></span></p>
+        <ul class="modal__list">
+          <li><a href="#">高岡西小学校<b>(37)</b></a></li>
+          <li><a href="#">高岡小学校<b>(63)</b></a></li>
+          <li><a href="#">安室小学校<b>(83)</b></a></li>
+          <li><a href="#">安室東小学校<b>(111)</b></a></li>
+          <li><a href="#">青山小学校<b>(45)</b></a></li>
+        </ul>
+        <a class="btn btn--primary btn--block" href="#">高岡・安室・青山エリアのすべての物件を見る</a>
+      </div>
+    </div>
+    <div class="modal" id="modal-ekikita" role="dialog" aria-modal="true" aria-labelledby="modal-ekikita-h">
+      <a class="modal__bg" href="#areamap" aria-label="閉じる"></a>
+      <div class="modal__panel">
+        <a class="modal__close" href="#areamap" aria-label="閉じる">×</a>
+        <p class="modal__h" id="modal-ekikita-h" style="--c: #2f7d4f">駅北エリア</p>
+        <p class="modal__cnt"><span class="modal__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7v9a1 1 0 0 1-1 1h-5v-6H10v6H4a1 1 0 0 1-1-1z"/></svg><b data-count="ekikita:public">61</b><span class="visually-hidden">一般公開物件</span></span><span class="modal__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10V8a5 5 0 0 1 10 0v2h1a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1zm2 0h6V8a3 3 0 0 0-6 0z"/></svg><b data-count="ekikita:member">159</b><span class="visually-hidden">会員限定物件</span></span><span class="modal__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16l1 5a3 3 0 0 1-3 3 3 3 0 0 1-3-2 3 3 0 0 1-3 2 3 3 0 0 1-3-2 3 3 0 0 1-3 2 3 3 0 0 1-3-3zm1 10h14v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z"/></svg><b data-count="ekikita:shop">50</b><span class="visually-hidden">店頭のみ物件</span></span></p>
+        <ul class="modal__list">
+          <li><a href="#">白鷺小学校<b>(45)</b></a></li>
+          <li><a href="#">城西小学校<b>(59)</b></a></li>
+          <li><a href="#">船場小学校<b>(34)</b></a></li>
+          <li><a href="#">城東小学校<b>(23)</b></a></li>
+          <li><a href="#">東小学校<b>(15)</b></a></li>
+          <li><a href="#">城乾小学校<b>(66)</b></a></li>
+          <li><a href="#">野里小学校<b>(28)</b></a></li>
+        </ul>
+        <a class="btn btn--primary btn--block" href="#">駅北エリアのすべての物件を見る</a>
+      </div>
+    </div>
+    <div class="modal" id="modal-ekiminami" role="dialog" aria-modal="true" aria-labelledby="modal-ekiminami-h">
+      <a class="modal__bg" href="#areamap" aria-label="閉じる"></a>
+      <div class="modal__panel">
+        <a class="modal__close" href="#areamap" aria-label="閉じる">×</a>
+        <p class="modal__h" id="modal-ekiminami-h" style="--c: #b8562a">駅南エリア</p>
+        <p class="modal__cnt"><span class="modal__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7v9a1 1 0 0 1-1 1h-5v-6H10v6H4a1 1 0 0 1-1-1z"/></svg><b data-count="ekiminami:public">50</b><span class="visually-hidden">一般公開物件</span></span><span class="modal__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10V8a5 5 0 0 1 10 0v2h1a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1zm2 0h6V8a3 3 0 0 0-6 0z"/></svg><b data-count="ekiminami:member">93</b><span class="visually-hidden">会員限定物件</span></span><span class="modal__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16l1 5a3 3 0 0 1-3 3 3 3 0 0 1-3-2 3 3 0 0 1-3 2 3 3 0 0 1-3-2 3 3 0 0 1-3 2 3 3 0 0 1-3-3zm1 10h14v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z"/></svg><b data-count="ekiminami:shop">32</b><span class="visually-hidden">店頭のみ物件</span></span></p>
+        <ul class="modal__list">
+          <li><a href="#">手柄小学校<b>(36)</b></a></li>
+          <li><a href="#">城陽小学校<b>(37)</b></a></li>
+          <li><a href="#">荒川小学校<b>(102)</b></a></li>
+        </ul>
+        <a class="btn btn--primary btn--block" href="#">駅南エリアのすべての物件を見る</a>
+      </div>
+    </div>
+    <div class="modal" id="modal-shikama" role="dialog" aria-modal="true" aria-labelledby="modal-shikama-h">
+      <a class="modal__bg" href="#areamap" aria-label="閉じる"></a>
+      <div class="modal__panel">
+        <a class="modal__close" href="#areamap" aria-label="閉じる">×</a>
+        <p class="modal__h" id="modal-shikama-h" style="--c: #6b4f8f">飾磨エリア</p>
+        <p class="modal__cnt"><span class="modal__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7v9a1 1 0 0 1-1 1h-5v-6H10v6H4a1 1 0 0 1-1-1z"/></svg><b data-count="shikama:public">53</b><span class="visually-hidden">一般公開物件</span></span><span class="modal__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10V8a5 5 0 0 1 10 0v2h1a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1zm2 0h6V8a3 3 0 0 0-6 0z"/></svg><b data-count="shikama:member">98</b><span class="visually-hidden">会員限定物件</span></span><span class="modal__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16l1 5a3 3 0 0 1-3 3 3 3 0 0 1-3-2 3 3 0 0 1-3 2 3 3 0 0 1-3-2 3 3 0 0 1-3 2 3 3 0 0 1-3-3zm1 10h14v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z"/></svg><b data-count="shikama:shop">36</b><span class="visually-hidden">店頭のみ物件</span></span></p>
+        <ul class="modal__list">
+          <li><a href="#">飾磨小学校<b>(64)</b></a></li>
+          <li><a href="#">英賀保小学校<b>(42)</b></a></li>
+          <li><a href="#">津田小学校<b>(50)</b></a></li>
+          <li><a href="#">高浜小学校<b>(31)</b></a></li>
+        </ul>
+        <a class="btn btn--primary btn--block" href="#">飾磨エリアのすべての物件を見る</a>
+      </div>
+    </div>
+    <div class="modal" id="modal-shirahama" role="dialog" aria-modal="true" aria-labelledby="modal-shirahama-h">
+      <a class="modal__bg" href="#areamap" aria-label="閉じる"></a>
+      <div class="modal__panel">
+        <a class="modal__close" href="#areamap" aria-label="閉じる">×</a>
+        <p class="modal__h" id="modal-shirahama-h" style="--c: #1f7fb5">白浜エリア</p>
+        <p class="modal__cnt"><span class="modal__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7v9a1 1 0 0 1-1 1h-5v-6H10v6H4a1 1 0 0 1-1-1z"/></svg><b data-count="shirahama:public">29</b><span class="visually-hidden">一般公開物件</span></span><span class="modal__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10V8a5 5 0 0 1 10 0v2h1a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1zm2 0h6V8a3 3 0 0 0-6 0z"/></svg><b data-count="shirahama:member">78</b><span class="visually-hidden">会員限定物件</span></span><span class="modal__cnt__item"><svg class="cnt__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16l1 5a3 3 0 0 1-3 3 3 3 0 0 1-3-2 3 3 0 0 1-3 2 3 3 0 0 1-3-2 3 3 0 0 1-3 2 3 3 0 0 1-3-3zm1 10h14v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z"/></svg><b data-count="shirahama:shop">29</b><span class="visually-hidden">店頭のみ物件</span></span></p>
+        <ul class="modal__list">
+          <li><a href="#">糸引小学校<b>(70)</b></a></li>
+          <li><a href="#">白浜小学校<b>(53)</b></a></li>
+          <li><a href="#">妻鹿小学校<b>(13)</b></a></li>
+        </ul>
+        <a class="btn btn--primary btn--block" href="#">白浜エリアのすべての物件を見る</a>
+      </div>
+    </div>
 
     <h3>新着物件<span class="dummy">すべてダミー</span></h3>
     <ul class="props">
@@ -291,19 +501,6 @@
       <li><a href="#">1,500万〜2,000万円</a></li>
       <li><a href="#">2,000万〜2,500万円</a></li>
       <li><a href="#">2,500万円以上</a></li>
-    </ul>
-
-    <h3>小学校の学区から探す <span class="tbc">要確認：姫路市立小学校名のリスト</span></h3>
-    <ul class="chips">
-      <li><a href="#">◯◯小学校</a></li><li><a href="#">◯◯小学校</a></li>
-      <li><a href="#">◯◯小学校</a></li><li><a href="#">◯◯小学校</a></li>
-    </ul>
-
-    <h3>エリアから探す <span class="tbc">要確認：実際の対応エリア</span></h3>
-    <ul class="chips">
-      <li><a href="#">飾磨</a></li><li><a href="#">広畑</a></li><li><a href="#">網干</a></li>
-      <li><a href="#">書写</a></li><li><a href="#">花田</a></li><li><a href="#">別所</a></li>
-      <li><a href="#">香呂</a></li><li><a href="#">林田</a></li>
     </ul>
   </div>
 </section>
@@ -724,19 +921,19 @@
     <h2 id="member-h">会員登録で、ネットに出していない物件が見られます</h2>
     <div class="measure">
       <p>
-        扱っている752件のうち、所在地や写真を広く公開できない物件があります。
+        扱っている1,817件のうち、所在地や写真を広く公開できない物件があります。
         売主さまのご事情によるものです。
       </p>
     </div>
 
     <div class="member__nums">
       <div class="member__num">
-        <b>156件</b>
+        <b>938件</b>
         会員のみにご案内<span class="dummy">ダミー</span>
       </div>
       <div class="member__num">
-        <b>512件</b>
-        店舗でのみご案内<span class="dummy">ダミー</span>
+        <b>318件</b>
+        店頭のみでご案内<span class="dummy">ダミー</span>
       </div>
     </div>
 
