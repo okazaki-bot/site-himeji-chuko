@@ -523,7 +523,7 @@ a[href^="tel:"] {
 /* 地図の舞台。SVGの比率に合わせてバルーンを％配置する */
 .areamap__stage {
   position: relative;
-  aspect-ratio: 1000 / 760;
+  aspect-ratio: 1000 / 856;   /* 実データの緯度経度範囲から算出（build_map.py） */
   margin: 0 auto;
   max-width: 720px;
 }
@@ -541,11 +541,12 @@ a[href^="tel:"] {
   display: flex; flex-direction: column; align-items: center; gap: .1rem;
   padding: .3rem .45rem;
   background: var(--c); color: #fff; text-decoration: none;
-  border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,.25);
+  border: 2px solid rgba(255,255,255,.92);
+  border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,.3);
   font-size: .625rem; line-height: 1.35; white-space: nowrap;
 }
 .balloon::after {              /* 吹き出しの足 */
-  content: ""; position: absolute; bottom: -5px; left: 50%;
+  content: ""; position: absolute; bottom: -7px; left: 50%;
   transform: translateX(-50%);
   border-left: 5px solid transparent; border-right: 5px solid transparent;
   border-top: 5px solid var(--c);
@@ -656,8 +657,13 @@ a[href^="tel:"] {
 /* 地図上のバルーンは小さいので、同じリンクを 48px 以上で押せる
    .areacards（地図の下のエリア一覧）を同等の操作経路として必ず併置する。 */
 
-/* 海（南側の向き合わせ。地図として読めるようにするための補助） */
-.areamap__sea { fill: #dbe9f2; }
-.areamap__sealabel {
-  fill: #6b8ba3; font-size: 26px; letter-spacing: .3em; font-weight: 700;
+/* 海（OSM の natural=coastline から生成） */
+.areamap__sea { fill: #cfe2ee; }
+/* 対応エリア外（姫路市のうち6エリアに含まれない部分） */
+.areamap__outside { fill: #e6e3dd; stroke: #c9c3b8; stroke-width: 3; }
+
+/* 凡例の「対応エリア外」用スウォッチ */
+.legend__swatch {
+  width: 1em; height: 1em; border-radius: 2px;
+  background: #e6e3dd; border: 1px solid #c9c3b8; flex: 0 0 auto;
 }

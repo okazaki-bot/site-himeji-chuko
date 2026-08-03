@@ -3,3 +3,5 @@
 .DS_Store
 # ページで未使用の参考素材（連結ロゴ）
 assets/img/logo.png
+# 地図ブロック単体の確認用（一時ファイル）
+_map-preview.html
