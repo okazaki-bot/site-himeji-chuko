@@ -528,11 +528,50 @@ a[href^="tel:"] {
   max-width: 720px;
 }
 .areamap__svg { width: 100%; height: 100%; overflow: visible; }
-.areamap__region path { transition: filter .15s, opacity .15s; }
-.areamap__region:hover path,
-.areamap__region:focus-visible path { filter: brightness(.94); }
+.areamap__region path {
+  transition: fill-opacity .18s ease, stroke-width .18s ease, filter .18s ease;
+}
 .areamap__region:focus-visible { outline: none; }
-.areamap__region:focus-visible path { stroke-width: 12; }
+
+/* --- 地図のホバー -------------------------------------------------------
+   バルーンはエリアの中心に重ねて置いてあるため、件数の上にポインタが乗ると
+   SVG側の :hover が効かない。:has() でバルーンとエリアを結びつけ、
+   どちらに乗っても同じ強調がかかるようにする。
+   :has() 非対応の環境ではエリアを直接ホバーしたときだけ効く（機能は損なわれない）。 */
+
+/* ① ポインタが地図の上にあるあいだ、エリア全体を沈ませる */
+@media (hover: hover) {
+  .areamap__stage:has(.areamap__region:hover) .areamap__region path,
+  .areamap__stage:has(.balloon:hover) .areamap__region path { fill-opacity: .26; }
+}
+
+/* ② 対象のエリアだけを前に出す（エリア直接／対応バルーン経由／キーボード） */
+.areamap__region:hover path,
+.areamap__region:focus-visible path,
+.areamap__region:active path,
+  .areamap__stage:has(.balloon[href="#modal-himejinishi"]:hover) .areamap__region[href="#modal-himejinishi"] path,
+  .areamap__stage:has(.balloon[href="#modal-takaoka"]:hover) .areamap__region[href="#modal-takaoka"] path,
+  .areamap__stage:has(.balloon[href="#modal-ekikita"]:hover) .areamap__region[href="#modal-ekikita"] path,
+  .areamap__stage:has(.balloon[href="#modal-ekiminami"]:hover) .areamap__region[href="#modal-ekiminami"] path,
+  .areamap__stage:has(.balloon[href="#modal-shikama"]:hover) .areamap__region[href="#modal-shikama"] path,
+  .areamap__stage:has(.balloon[href="#modal-shirahama"]:hover) .areamap__region[href="#modal-shirahama"] path {
+  fill-opacity: 1;
+  stroke-width: 9;
+  filter: drop-shadow(0 3px 9px rgba(0, 0, 0, .4));
+}
+
+/* ③ エリアを直接ホバーしたら、そのエリアのバルーンも持ち上げる */
+.areamap__stage:has(.areamap__region[href="#modal-himejinishi"]:hover) .balloon[href="#modal-himejinishi"],
+  .areamap__stage:has(.areamap__region[href="#modal-takaoka"]:hover) .balloon[href="#modal-takaoka"],
+  .areamap__stage:has(.areamap__region[href="#modal-ekikita"]:hover) .balloon[href="#modal-ekikita"],
+  .areamap__stage:has(.areamap__region[href="#modal-ekiminami"]:hover) .balloon[href="#modal-ekiminami"],
+  .areamap__stage:has(.areamap__region[href="#modal-shikama"]:hover) .balloon[href="#modal-shikama"],
+  .areamap__stage:has(.areamap__region[href="#modal-shirahama"]:hover) .balloon[href="#modal-shirahama"] {
+  transform: translate(-50%, -50%) scale(1.08);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .38);
+  filter: brightness(1.14);
+  z-index: 2;
+}
 
 /* バルーン */
 .balloon {
@@ -551,7 +590,15 @@ a[href^="tel:"] {
   border-left: 5px solid transparent; border-right: 5px solid transparent;
   border-top: 5px solid var(--c);
 }
-.balloon:hover, .balloon:focus-visible { filter: brightness(1.12); }
+.balloon {
+  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+}
+.balloon:hover, .balloon:focus-visible {
+  filter: brightness(1.14);
+  transform: translate(-50%, -50%) scale(1.08);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .38);
+  z-index: 2;
+}
 .balloon__name { font-weight: 700; }
 .balloon__name small { font-weight: 400; opacity: .85; font-size: .85em; }
 .balloon__cnt { display: flex; gap: .3rem; }
@@ -585,7 +632,18 @@ a[href^="tel:"] {
   border-radius: var(--radius);
   min-height: 48px;
 }
-.areacard__link:hover { border-color: var(--c); }
+.areacard__link {
+  transition: border-color .18s ease, box-shadow .18s ease,
+              background-color .18s ease, transform .18s ease;
+}
+.areacard__link:hover, .areacard__link:focus-visible {
+  border-color: var(--c);
+  border-left-width: 9px;
+  background: #fffdf9;
+  box-shadow: 0 4px 14px rgba(18, 58, 92, .16);
+  transform: translateY(-2px);
+}
+.areacard__link:hover .areacard__more { text-decoration: none; font-weight: 700; }
 .areacard__name { font-weight: 700; color: var(--c); }
 .areacard__name small { font-weight: 400; color: var(--color-text-sub); font-size: .8em; }
 .areacard__total {
